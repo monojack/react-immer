@@ -1,0 +1,62 @@
+{
+  "name": "react-immer",
+  "version": "0.0.2",
+  "description": "No nonsense state management with Immer and React hooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monojack/react-immer.git"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "hooks",
+    "immer",
+    "state"
+  ],
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "dev": "npm run build:es -- -w",
+    "pretest": "npm run build:cjs",
+    "test": "ava --verbose --serial",
+    "build:esm": "BABEL_ENV=esm babel src --out-dir esm",
+    "build:cjs": "BABEL_ENV=cjs babel src --out-dir lib",
+    "build": "npm run build:cjs && npm run build:esm",
+    "prepare": "npm run clean && npm run build",
+    "clean": "rimraf lib esm"
+  },
+  "ava": {
+    "files": [
+      "test/*.js",
+      "!test/mocks/**"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/monojack/react-immer/issues"
+  },
+  "npmName": "react-immer",
+  "files": [
+    "esm",
+    "lib"
+  ],
+  "author": "Ionut Achim <achimvionut@gmail.com>",
+  "license": "MIT",
+  "sideEffects": false,
+  "dependencies": {
+    "symbol-observable": "1.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.1.5",
+    "@babel/core": "7.1.2",
+    "@babel/preset-env": "7.1.0",
+    "ava": "0.25.0",
+    "eslint": "5.6.1",
+    "eslint-config-mono": "2.0.0",
+    "immer": "1.8.0",
+    "rimraf": "2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.7.*",
+    "immer": "^1.8.*"
+  }
+}
