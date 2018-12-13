@@ -65,6 +65,7 @@ What's cool about **react-immer** is that if you don't support [Hooks](https://r
 
 ```js
 /* React < v16.7.* */
+import { useImmer } from 'react-immer'
 
 // ...
 // useImmer(specObj, renderFn)
@@ -83,7 +84,7 @@ Or, if you don't like the syntax, you can always use the **Immer** component
 
 ```js
 /* React < v16.7.* */
-
+import { Immer } from 'react-immer'
 // ...
 
 <Immer spec={{ count: state => state.count }}>
