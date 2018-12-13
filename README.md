@@ -1,5 +1,10 @@
 ## react-immer
 
+[![Build Status](https://travis-ci.org/monojack/react-immer.svg?branch=master)](https://travis-ci.org/monojack/react-immer)
+[![npm version](https://img.shields.io/npm/v/react-immer.svg)](https://www.npmjs.com/package/react-immer)
+[![npm downloads](https://img.shields.io/npm/dm/react-immer.svg)](https://www.npmjs.com/package/react-immer)
+[![minified size](https://badgen.net/bundlephobia/min/react-immer)](https://bundlephobia.com/result?p=react-immer@latest)
+
 No nonsense state management with [Immer](https://github.com/mweststrate/immer) and [React hooks](https://reactjs.org/docs/hooks-intro.html)
 
 **TL;DR**
