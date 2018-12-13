@@ -1,3 +1,7 @@
 {
-  "extends": [ "mono" ]
+  "parser": "babel-eslint",
+  "extends": ["standard-react", "mono"],
+  "rules": {
+    "react/prop-types": "off"
+  }
 }

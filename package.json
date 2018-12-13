@@ -16,9 +16,9 @@
   "main": "lib/index.js",
   "module": "esm/index.js",
   "scripts": {
-    "dev": "npm run build:es -- -w",
+    "dev": "npm run build:esm -- -w",
     "pretest": "npm run build:cjs",
-    "test": "ava --verbose --serial",
+    "test": "ava",
     "build:esm": "BABEL_ENV=esm babel src --out-dir esm",
     "build:cjs": "BABEL_ENV=cjs babel src --out-dir lib",
     "build": "npm run build:cjs && npm run build:esm",
@@ -48,11 +48,20 @@
   "devDependencies": {
     "@babel/cli": "7.1.5",
     "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
     "@babel/preset-env": "7.1.0",
-    "ava": "0.25.0",
+    "@babel/preset-react": "^7.0.0",
+    "ava": "^0.25.0",
+    "babel-eslint": "^10.0.1",
     "eslint": "5.6.1",
     "eslint-config-mono": "2.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
     "immer": "1.8.0",
+    "react": "^16.7.0-alpha.2",
     "rimraf": "2.6.2"
   },
   "peerDependencies": {

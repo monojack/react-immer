@@ -1,33 +1,7 @@
 import { useState, useEffect, } from 'react'
-import { produce, } from 'immer'
+import useImmerHook from './useImmerHook'
+import useImmerRenderer from './useImmerRenderer'
 
-import shallowEqual from './shallowEqual'
-import applySpec from './applySpec'
-import state$ from './store'
+const useImmer = useState && useEffect ? useImmerHook : useImmerRenderer
 
-export default function useImmer (spec) {
-  const [ state, setState, ] = useState(applySpec(spec)(state$.value))
-
-  useEffect(
-    () => {
-      const sub = state$.subscribe({
-        next: v => {
-          const nextState = applySpec(spec)(v)
-          if (!shallowEqual(state, nextState)) {
-            setState(nextState)
-          }
-        },
-      })
-
-      return () => sub.unsubscribe()
-    },
-    [ spec, ]
-  )
-
-  const update = cb => {
-    const nextState = produce(state$.value, cb)
-    state$.next(nextState)
-  }
-
-  return [ state, update, ]
-}
+export default useImmer
