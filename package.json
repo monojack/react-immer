@@ -1,6 +1,6 @@
 {
   "name": "react-immer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "No nonsense state management with Immer and React hooks",
   "repository": {
     "type": "git",
