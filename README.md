@@ -64,62 +64,35 @@ export default function Counter() {
 What's cool about **react-immer** is that if you don't support [Hooks](https://reactjs.org/docs/hooks-intro.html) yet, you can use it inline and it will work like a [render prop](https://reactjs.org/docs/render-props.html). In this case, it takes two arguments, the _spec object_ and the _render function_.
 
 ```js
-/* Counter.js */
+/* React < v16.7.* */
 
-import React from 'react' // < v16.7.*
-import { useImmer } from 'react-immer'
-
-export default function Counter() {
-  const decrement = draft => {
-    draft.count -= 1
-  }
-
-  const increment = draft => {
-    draft.count += 1
-  }
-
-  // useImmer(specObj, renderFn)
-  return (
-    <div>
-      {useImmer({ count: state => state.count }, ({ count }, produce) => (
-        <span>
-          <button onClick={() => produce(decrement)}>-</button>
-          <span>{count}</span>
-          <button onClick={() => produce(increment)}>+</button>
-        </span>
-      ))}
-    </div>
-  )
-}
+// ...
+// useImmer(specObj, renderFn)
+<div>
+  {useImmer({ count: state => state.count }, ({ count }, produce) => (
+    <span>
+      <button onClick={() => produce(decrement)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => produce(increment)}>+</button>
+    </span>
+  ))}
+</div>
 ```
 
 Or, if you don't like the syntax, you can always use the **Immer** component
 
 ```js
-/* Counter.js */
+/* React < v16.7.* */
 
-import React from 'react' // < v16.7.*
-import { Immer } from 'react-immer'
+// ...
 
-export default function Counter() {
-  const decrement = draft => {
-    draft.count -= 1
-  }
-
-  const increment = draft => {
-    draft.count += 1
-  }
-
-  return (
-    <Immer spec={{ count: state => state.count }}>
-      {({ count }, produce) => (
-        <span>
-          <button onClick={() => produce(decrement)}>-</button>
-          <span>{count}</span>
-          <button onClick={() => produce(increment)}>+</button>
-        </span>
-      )}
-    </Immer>
-  )
-}
+<Immer spec={{ count: state => state.count }}>
+  {({ count }, produce) => (
+    <span>
+      <button onClick={() => produce(decrement)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => produce(increment)}>+</button>
+    </span>
+  )}
+</Immer>
 ```
