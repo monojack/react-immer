@@ -2,7 +2,7 @@ import { useState, useEffect, } from 'react'
 
 import shallowEqual from './shallowEqual'
 import applySpec from './applySpec'
-import state$ from './Store'
+import state$ from './store'
 
 export default function useImmerHook (spec) {
   const [ state, setState, ] = useState(applySpec(spec)(state$.value))

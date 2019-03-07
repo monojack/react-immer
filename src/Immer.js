@@ -1,6 +1,6 @@
 import { Component, } from 'react'
 
-import state$ from './Store'
+import state$ from './store'
 import shallowEqual from './shallowEqual'
 import applySpec from './applySpec'
 
