@@ -23,7 +23,7 @@ export default function useImmerHook (spec) {
     })
 
     return () => sub.unsubscribe()
-  }, Object.values(spec))
+  }, [])
 
   return [ state, state$.update.bind(state$), ]
 }
