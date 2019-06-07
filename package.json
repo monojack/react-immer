@@ -51,21 +51,21 @@
     "@babel/plugin-proposal-class-properties": "7.2.1",
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
-    "ava": "0.25.0",
+    "ava": "2.0.0",
     "babel-eslint": "10.0.1",
-    "eslint": "5.6.1",
+    "eslint": "5.16.0",
     "eslint-config-mono": "2.0.0",
     "eslint-config-standard-react": "7.0.1",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-node": "8.0.0",
     "eslint-plugin-promise": "4.0.1",
     "eslint-plugin-react": "7.11.1",
-    "immer": "1.8.0",
-    "react": "16.8.5",
-    "rimraf": "2.6.2"
+    "immer": "3.1.2",
+    "react": "16.8.6",
+    "rimraf": "2.6.3"
   },
   "peerDependencies": {
     "react": "^16.7.* || ^16.8.*",
-    "immer": "^1.8.* || ^2.*"
+    "immer": "^1.8.* || ^2.* || ^3.*"
   }
 }
