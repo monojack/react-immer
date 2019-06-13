@@ -4,6 +4,8 @@ import shallowEqual from './shallowEqual'
 import applySpec from './applySpec'
 import state$ from './store'
 
+const produce = state$.update.bind(state$)
+
 export default function useImmerHook (spec) {
   const [ state, setState, ] = useState(applySpec(spec)(state$.value))
 
@@ -22,5 +24,5 @@ export default function useImmerHook (spec) {
     return () => sub.unsubscribe()
   }, [])
 
-  return [ state, state$.update.bind(state$), ]
+  return [ state, produce, ]
 }
